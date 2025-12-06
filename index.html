@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniverseDesign.co | Digital Experience</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Digital Design Agency crafting immersive web experiences.">
+    <meta name="theme-color" content="#050505">
+
+    <!-- Tailwind CSS (via CDN as per source files) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        /* Grid Background Utility */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+                linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+        }
+
+        /* Custom Cursor (Optional) */
+        .cursor-dot,
+        .cursor-outline {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease-out;
+        }
+
+        /* Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline Animations */
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center backdrop-blur-md bg-[#050505]/80 border-b border-[#D4AF37]/30">
+        <div class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="Logo" class="w-10 h-10 object-contain">
+            <div class="text-xl font-bold tracking-tight uppercase">
+                Universe<span class="text-[#D4AF37]">Design</span>.Co
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#services"
+                class="text-sm uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Especialidades</a>
+            <a href="#agency"
+                class="text-sm uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">A
+                Agência</a>
+            <a href="#work"
+                class="text-sm uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Projetos</a>
+        </nav>
+        <a href="#contact"
+            class="px-6 py-2 border border-[#D4AF37]/50 rounded-full text-xs uppercase tracking-widest hover:bg-[#D4AF37] hover:text-black transition-all text-[#D4AF37]">
+            Iniciar Projeto
+        </a>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <!-- Hero (Cinematic Gold) -->
+        <section
+            class="relative w-full min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20 bg-[#050505] bg-grid-pattern overflow-hidden">
+            <!-- Background Video -->
+            <div class="absolute inset-0 z-0 opacity-40">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="assets/video/hero-background.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+
+
+
+            <div class="max-w-7xl mx-auto w-full relative z-10">
+                <div class="mb-12 flex items-center gap-4 reveal-up">
+                    <div class="w-12 h-[1px] bg-[#D4AF37]"></div>
+                    <span class="text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-bold">Cinematic Digital
+                        Experience</span>
+                </div>
+
+                <div class="mb-12 reveal-up delay-100">
+                    <h1 class="text-6xl md:text-[7rem] leading-[1.1] font-[800] uppercase tracking-tighter text-white">
+                        Universe<br />
+                        <span class="text-neutral-500">Design</span>.Co
+                    </h1>
+                    <div class="w-24 h-[1px] bg-[#D4AF37]/30 mt-8"></div>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start gap-12 border-t border-neutral-900 pt-12 reveal-up delay-200">
+                    <p class="max-w-lg text-lg text-[#E5E5E5] opacity-60 leading-relaxed font-light">
+                        Criamos identidades visuais que transcendem o comum. Minimalismo, estratégia e estética pura
+                        para marcas que lideram o futuro.
+                    </p>
+
+                    <div class="flex flex-wrap gap-6">
+                        <a href="#contact"
+                            class="px-8 py-4 bg-[#D4AF37] text-black font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-500">
+                            Iniciar Projeto
+                        </a>
+                        <a href="#work"
+                            class="px-8 py-4 bg-transparent border border-[#D4AF37]/30 text-[#D4AF37] font-bold uppercase tracking-widest text-xs hover:bg-[#D4AF37]/10 transition-all duration-500">
+                            Ver Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="w-full bg-neutral-900 py-4 overflow-hidden border-y border-[#D4AF37]/30">
+            <div class="flex whitespace-nowrap animate-marquee">
+                <div class="flex gap-8 items-center text-sm uppercase tracking-[0.2em] text-[#D4AF37] px-4">
+                    <span class="text-neutral-400">Experiência Digital</span> • <span
+                        class="text-neutral-400">Estratégia</span> • <span class="text-neutral-400">Inovação</span> •
+                    <span class="text-neutral-400">Branding</span> • <span
+                        class="text-neutral-400">Desenvolvimento</span> • <span class="text-neutral-400">Design
+                        UI/UX</span> •
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex gap-8 items-center text-sm uppercase tracking-[0.2em] text-[#D4AF37] px-4">
+                    <span class="text-neutral-400">Experiência Digital</span> • <span
+                        class="text-neutral-400">Estratégia</span> • <span class="text-neutral-400">Inovação</span> •
+                    <span class="text-neutral-400">Branding</span> • <span
+                        class="text-neutral-400">Desenvolvimento</span> • <span class="text-neutral-400">Design
+                        UI/UX</span> •
+                </div>
+                <div class="flex gap-8 items-center text-sm uppercase tracking-[0.2em] text-[#D4AF37] px-4">
+                    <span class="text-neutral-400">Experiência Digital</span> • <span
+                        class="text-neutral-400">Estratégia</span> • <span class="text-neutral-400">Inovação</span> •
+                    <span class="text-neutral-400">Branding</span> • <span
+                        class="text-neutral-400">Desenvolvimento</span> • <span class="text-neutral-400">Design
+                        UI/UX</span> •
+                </div>
+                <div class="flex gap-8 items-center text-sm uppercase tracking-[0.2em] text-[#D4AF37] px-4">
+                    <span class="text-neutral-400">Experiência Digital</span> • <span
+                        class="text-neutral-400">Estratégia</span> • <span class="text-neutral-400">Inovação</span> •
+                    <span class="text-neutral-400">Branding</span> • <span
+                        class="text-neutral-400">Desenvolvimento</span> • <span class="text-neutral-400">Design
+                        UI/UX</span> •
+                </div>
+            </div>
+        </div>
+
+        <!-- Services (Gold Grid 3-Col) -->
+        <section id="services" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20 text-center">
+                    <span class="text-[#D4AF37] text-xs uppercase tracking-[0.3em] mb-4 block">Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-white">O Que <span
+                            class="text-[#D4AF37]">Fazemos</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 1. Identidade Visual Premium -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="crown" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Identidade Visual
+                            Premium</h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Sistemas visuais completos e luxuosos para
+                            marcas que desejam se destacar no mercado de alto padrão.</p>
+                    </div>
+
+                    <!-- 2. Social Media Lux -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="instagram" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Social Media Lux</h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Gestão estratégica e content design
+                            sofisticado para posicionar sua autoridade nas redes.</p>
+                    </div>
+
+                    <!-- 3. Branding Estratégico -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="gem" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Branding Estratégico
+                        </h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Definição de arquétipos, tom de voz e
+                            posicionamento de mercado para máxima relevância.</p>
+                    </div>
+
+                    <!-- 4. Web/UI Minimal -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="monitor" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Web/UI Minimal</h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Websites imersivos e landing pages de alta
+                            conversão com estética minimalista e veloz.</p>
+                    </div>
+
+                    <!-- 5. Motion & Reels -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="play-circle" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Motion & Reels</h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Edições dinâmicas e animações
+                            cinematográficas para capturar a atenção em segundos.</p>
+                    </div>
+
+                    <!-- 6. Consultoria Criativa -->
+                    <div
+                        class="group p-10 border border-[#D4AF37]/30 hover:border-[#D4AF37] flex flex-col items-center text-center transition-all duration-300 bg-neutral-900/10 hover:bg-neutral-900/30">
+                        <div class="w-12 h-12 mb-8 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <i data-lucide="lightbulb" class="w-full h-full stroke-[1px]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-4 text-white">Consultoria Criativa
+                        </h3>
+                        <p class="text-neutral-500 text-sm leading-relaxed">Mentoria direta para destravar o potencial
+                            visual e comunicativo da sua marca.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agency -->
+        <section id="agency" class="w-full bg-[#050505] py-24 px-6 md:px-12 relative overflow-hidden">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[100px] pointer-events-none">
+            </div>
+
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <span
+                    class="inline-block px-3 py-1 mb-8 border border-[#D4AF37]/30 rounded-full text-[10px] uppercase tracking-[0.2em] text-[#D4AF37]">A
+                    Agência</span>
+                <h2 class="text-3xl md:text-5xl font-medium leading-tight mb-12">
+                    Acreditamos no poder da <span class="text-neutral-500">simplicidade</span>.
+                    Removendo o não essencial, revelamos a <span class="text-white italic font-serif">alma</span> da sua
+                    marca.
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-neutral-800 pt-12">
+                    <div>
+                        <div class="text-4xl font-bold mb-2">10+</div>
+                        <div class="text-xs uppercase tracking-widest text-neutral-500">Anos de Exp.</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">50+</div>
+                        <div class="text-xs uppercase tracking-widest text-neutral-500">Clientes</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">12</div>
+                        <div class="text-xs uppercase tracking-widest text-neutral-500">Prêmios</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">24/7</div>
+                        <div class="text-xs uppercase tracking-widest text-neutral-500">Suporte</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiators (Gold Power Section) -->
+        <section class="w-full bg-[#080808] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+                    <div
+                        class="text-center group p-6 border-b border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 transition-colors">
+                        <i data-lucide="award" class="w-8 h-8 mx-auto text-[#D4AF37] mb-4 stroke-[1px]"></i>
+                        <h3 class="text-white uppercase tracking-widest text-xs mb-2">Método Autoral</h3>
+                    </div>
+                    <div
+                        class="text-center group p-6 border-b border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 transition-colors">
+                        <i data-lucide="layers" class="w-8 h-8 mx-auto text-[#D4AF37] mb-4 stroke-[1px]"></i>
+                        <h3 class="text-white uppercase tracking-widest text-xs mb-2">Estética Consistente</h3>
+                    </div>
+                    <div
+                        class="text-center group p-6 border-b border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 transition-colors">
+                        <i data-lucide="clock" class="w-8 h-8 mx-auto text-[#D4AF37] mb-4 stroke-[1px]"></i>
+                        <h3 class="text-white uppercase tracking-widest text-xs mb-2">Prazos Claros</h3>
+                    </div>
+                    <div
+                        class="text-center group p-6 border-b border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 transition-colors">
+                        <i data-lucide="trending-up" class="w-8 h-8 mx-auto text-[#D4AF37] mb-4 stroke-[1px]"></i>
+                        <h3 class="text-white uppercase tracking-widest text-xs mb-2">Estratégia + Design</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="reveal-up delay-100">
+                        <div class="text-5xl font-bold text-white mb-2">10+</div>
+                        <div class="text-[#D4AF37] text-[10px] uppercase tracking-[0.2em]">Anos de Exp.</div>
+                    </div>
+                    <div class="reveal-up delay-200">
+                        <div class="text-5xl font-bold text-white mb-2">50+</div>
+                        <div class="text-[#D4AF37] text-[10px] uppercase tracking-[0.2em]">Projetos</div>
+                    </div>
+                    <div class="reveal-up delay-300">
+                        <div class="text-5xl font-bold text-white mb-2">12</div>
+                        <div class="text-[#D4AF37] text-[10px] uppercase tracking-[0.2em]">Prêmios</div>
+                    </div>
+                    <div class="reveal-up delay-100">
+                        <div class="text-5xl font-bold text-white mb-2">24/7</div>
+                        <div class="text-[#D4AF37] text-[10px] uppercase tracking-[0.2em]">Suporte</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About (Gold Identity Section) -->
+        <section id="about"
+            class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30 overflow-hidden">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <!-- Image with Glow -->
+                <div class="relative w-full md:w-1/2 aspect-[3/4] md:aspect-square reveal-up">
+                    <div class="absolute inset-0 bg-[#D4AF37]/20 blur-[100px] rounded-full scale-75 opacity-50"></div>
+                    <img id="about-image" src="assets/profile.png" alt="Profile"
+                        class="relative z-10 w-full h-full object-cover grayscale brightness-90 border border-[#D4AF37]/30 transition-all duration-1000 ease-out">
+                </div>
+
+                <!-- Content -->
+                <div class="w-full md:w-1/2 reveal-up delay-200">
+                    <div class="w-24 h-[1px] bg-[#D4AF37] mb-8"></div>
+                    <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-white mb-8">
+                        Além do <span class="text-[#D4AF37]">Pixel</span>.
+                    </h2>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        Acreditamos no poder da simplicidade. Removendo o não essencial, revelamos a alma da sua marca.
+                        Nosso trabalho não é apenas criar imagens bonitas, é construir narrativas visuais que conectam,
+                        convertem e perduram.
+                    </p>
+
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="check" class="text-[#D4AF37] w-5 h-5"></i>
+                            <span class="text-white text-sm uppercase tracking-wider">Foco na Experiência do
+                                Usuário</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="check" class="text-[#D4AF37] w-5 h-5"></i>
+                            <span class="text-white text-sm uppercase tracking-wider">Metodologia Ágil e
+                                Transparente</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="check" class="text-[#D4AF37] w-5 h-5"></i>
+                            <span class="text-white text-sm uppercase tracking-wider">Design orientado a
+                                resultados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <!-- Process (Vertical Gold Timeline) -->
+        <section id="process" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-24 reveal-up">
+                    <span class="text-[#D4AF37] text-xs uppercase tracking-[0.3em] mb-4 block">Metodologia</span>
+                    <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-white">Como <span
+                            class="text-[#D4AF37]">Criamos</span></h2>
+                </div>
+
+                <div class="relative">
+                    <!-- Vertical Line -->
+                    <div
+                        class="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[1px] bg-[#D4AF37]/30 -translate-x-1/2">
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div
+                        class="relative flex flex-col md:flex-row items-center justify-between mb-16 group fade-right delay-100">
+                        <div
+                            class="md:w-[45%] mb-4 md:mb-0 order-2 md:order-1 md:text-right pr-0 md:pr-12 pl-12 md:pl-0 text-left">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Diagnóstico Profundo</h3>
+                            <p class="text-neutral-500 text-sm leading-relaxed">Mergulho total no universo da marca para
+                                identificar oportunidades ocultas.</p>
+                        </div>
+                        <div
+                            class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-3 h-3 bg-[#D4AF37] rounded-full shadow-[0_0_10px_#D4AF37] z-10 order-1 md:order-2">
+                        </div>
+                        <div
+                            class="md:w-[45%] order-3 md:order-3 pl-12 hidden md:block text-[#D4AF37] font-mono opacity-50">
+                            01</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div
+                        class="relative flex flex-col md:flex-row items-center justify-between mb-16 group fade-left delay-200">
+                        <div
+                            class="md:w-[45%] order-3 md:order-1 pr-12 hidden md:block text-right text-[#D4AF37] font-mono opacity-50">
+                            02</div>
+                        <div
+                            class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-3 h-3 bg-[#050505] border border-[#D4AF37] rounded-full z-10 order-1 md:order-2">
+                        </div>
+                        <div class="md:w-[45%] mb-4 md:mb-0 order-2 md:order-3 pl-12 md:pl-12 text-left">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Direção Estética</h3>
+                            <p class="text-neutral-500 text-sm leading-relaxed">Definição do moodboard, paleta e
+                                tipografia que ditarão o tom visual.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div
+                        class="relative flex flex-col md:flex-row items-center justify-between mb-16 group fade-right delay-300">
+                        <div
+                            class="md:w-[45%] mb-4 md:mb-0 order-2 md:order-1 md:text-right pr-0 md:pr-12 pl-12 md:pl-0 text-left">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Construção da Identidade</h3>
+                            <p class="text-neutral-500 text-sm leading-relaxed">Design refinado, prototipagem e
+                                desenvolvimento pixel-perfect.</p>
+                        </div>
+                        <div
+                            class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-3 h-3 bg-[#050505] border border-[#D4AF37] rounded-full z-10 order-1 md:order-2">
+                        </div>
+                        <div
+                            class="md:w-[45%] order-3 md:order-3 pl-12 hidden md:block text-[#D4AF37] font-mono opacity-50">
+                            03</div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div
+                        class="relative flex flex-col md:flex-row items-center justify-between mb-16 group fade-left delay-100">
+                        <div
+                            class="md:w-[45%] order-3 md:order-1 pr-12 hidden md:block text-right text-[#D4AF37] font-mono opacity-50">
+                            04</div>
+                        <div
+                            class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-3 h-3 bg-[#050505] border border-[#D4AF37] rounded-full z-10 order-1 md:order-2">
+                        </div>
+                        <div class="md:w-[45%] mb-4 md:mb-0 order-2 md:order-3 pl-12 md:pl-12 text-left">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Manual Premium</h3>
+                            <p class="text-neutral-500 text-sm leading-relaxed">Documentação completa para garantir
+                                consistência em todos os canais.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div
+                        class="relative flex flex-col md:flex-row items-center justify-between mb-16 group fade-right delay-200">
+                        <div
+                            class="md:w-[45%] mb-4 md:mb-0 order-2 md:order-1 md:text-right pr-0 md:pr-12 pl-12 md:pl-0 text-left">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Entrega + Suporte</h3>
+                            <p class="text-neutral-500 text-sm leading-relaxed">Lançamento oficial e acompanhamento para
+                                garantir performance máxima.</p>
+                        </div>
+                        <div
+                            class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-3 h-3 bg-[#D4AF37] rounded-full shadow-[0_0_15px_#D4AF37] z-10 order-1 md:order-2">
+                        </div>
+                        <div
+                            class="md:w-[45%] order-3 md:order-3 pl-12 hidden md:block text-[#D4AF37] font-mono opacity-50">
+                            05</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio (Gold Showcase Asymmetric) -->
+        <section id="work" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+                    <h2 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white">Projetos <span
+                            class="text-[#D4AF37]">Selecionados</span></h2>
+
+                    <!-- Filters -->
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="px-6 py-2 border border-[#D4AF37] text-[#D4AF37] text-xs uppercase tracking-widest bg-[#D4AF37]/10">Todos</button>
+                        <button
+                            class="px-6 py-2 border border-[#D4AF37]/20 text-neutral-500 text-xs uppercase tracking-widest hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all">Branding</button>
+                        <button
+                            class="px-6 py-2 border border-[#D4AF37]/20 text-neutral-500 text-xs uppercase tracking-widest hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all">Web</button>
+                    </div>
+                </div>
+
+                <!-- Asymmetric Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Project 1 (Large Span) -->
+                    <div
+                        class="group relative aspect-[4/3] md:col-span-2 lg:col-span-2 overflow-hidden bg-neutral-900 border border-[#D4AF37]/20 cursor-pointer reveal-up delay-100">
+                        <img src="assets/gold_showcase_1.png" alt="Project"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3
+                                class="text-3xl font-bold uppercase text-white mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Nexus Tech</h3>
+                            <p
+                                class="text-[#D4AF37] text-xs uppercase tracking-widest translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                Rebranding + Estratégia</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Portrait) -->
+                    <div
+                        class="group relative aspect-[3/4] md:row-span-2 overflow-hidden bg-neutral-900 border border-[#D4AF37]/20 cursor-pointer reveal-up delay-200">
+                        <img src="assets/gold_showcase_2.png" alt="Project"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3
+                                class="text-2xl font-bold uppercase text-white mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Lumina Art</h3>
+                            <p
+                                class="text-[#D4AF37] text-xs uppercase tracking-widest translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                Identidade Visual</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Standard) -->
+                    <div
+                        class="group relative aspect-square overflow-hidden bg-neutral-900 border border-[#D4AF37]/20 cursor-pointer reveal-up delay-300">
+                        <img src="assets/gold_showcase_3.png" alt="Project"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3
+                                class="text-xl font-bold uppercase text-white mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Zen App</h3>
+                            <p
+                                class="text-[#D4AF37] text-xs uppercase tracking-widest translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                UI/UX Design</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Standard) -->
+                    <div
+                        class="group relative aspect-square overflow-hidden bg-neutral-900 border border-[#D4AF37]/20 cursor-pointer reveal-up delay-100">
+                        <div class="w-full h-full bg-[#0a0a0a] flex items-center justify-center relative">
+                            <!-- Placeholder for non-image project -->
+                            <span class="text-[#D4AF37]/20 text-9xl font-bold">04</span>
+                        </div>
+                        <div class="absolute bottom-8 left-8 z-10">
+                            <h3
+                                class="text-xl font-bold uppercase text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
+                                Future Corp</h3>
+                            <p class="text-neutral-500 text-xs uppercase tracking-widest">Consultoria</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials (Gold Social Proof) -->
+        <section id="testimonials" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center justify-between mb-16">
+                    <h2 class="text-3xl font-bold uppercase tracking-tighter text-white">Opinião dos <span
+                            class="text-[#D4AF37]">Sócios</span></h2>
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 bg-[#D4AF37] rounded-full"></div>
+                        <div class="w-3 h-3 bg-[#D4AF37]/20 rounded-full"></div>
+                        <div class="w-3 h-3 bg-[#D4AF37]/20 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div
+                        class="p-10 border border-[#D4AF37]/20 bg-neutral-900/10 group hover:border-[#D4AF37] hover:bg-neutral-900/30 transition-all duration-500 cursor-pointer reveal-up delay-100 flex flex-col justify-between h-full">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                        </div>
+                        <p class="text-neutral-400 text-sm leading-loose mb-8">"A UniverseDesign elevou nosso patamar.
+                            Não foi apenas uma mudança visual, mas uma reestruturação completa de como somos
+                            percebidos."</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full border border-[#D4AF37] p-1 flex items-center justify-center bg-neutral-900">
+                                <span class="text-[#D4AF37] font-bold text-xs">MR</span>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF37] font-bold text-sm uppercase tracking-wider">Marcos Rocha
+                                </div>
+                                <div class="text-neutral-600 text-[10px] uppercase tracking-widest">CEO, Nexus</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div
+                        class="p-10 border border-[#D4AF37]/20 bg-neutral-900/10 group hover:border-[#D4AF37] hover:bg-neutral-900/30 transition-all duration-500 cursor-pointer reveal-up delay-200 flex flex-col justify-between h-full">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                        </div>
+                        <p class="text-neutral-400 text-sm leading-loose mb-8">"Minimalismo com propósito. Cada linha
+                            tem uma razão de existir. O suporte pós-entrega também foi impecável."</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full border border-[#D4AF37] p-1 flex items-center justify-center bg-neutral-900">
+                                <span class="text-[#D4AF37] font-bold text-xs">RS</span>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF37] font-bold text-sm uppercase tracking-wider">Ricardo Silva
+                                </div>
+                                <div class="text-neutral-600 text-[10px] uppercase tracking-widest">Tech Lead</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div
+                        class="p-10 border border-[#D4AF37]/20 bg-neutral-900/10 group hover:border-[#D4AF37] hover:bg-neutral-900/30 transition-all duration-500 cursor-pointer reveal-up delay-300 flex flex-col justify-between h-full">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]"></i>
+                        </div>
+                        <p class="text-neutral-400 text-sm leading-loose mb-8">"O retorno sobre o investimento foi
+                            imediato. Nossa taxa de conversão aumentou 40% após o redesign da landing page."</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full border border-[#D4AF37] p-1 flex items-center justify-center bg-neutral-900">
+                                <span class="text-[#D4AF37] font-bold text-xs">AC</span>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF37] font-bold text-sm uppercase tracking-wider">Alpha Corp
+                                </div>
+                                <div class="text-neutral-600 text-[10px] uppercase tracking-widest">Partner</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages (Gold Pricing) -->
+        <section id="packages" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[#D4AF37] text-xs uppercase tracking-[0.3em] mb-4 block">Investimento</span>
+                    <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-white">Planos <span
+                            class="text-[#D4AF37]">Exclusivos</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <!-- Basic -->
+                    <div
+                        class="p-8 border border-[#D4AF37]/20 bg-neutral-900/5 hover:border-[#D4AF37]/50 transition-all duration-300">
+                        <h3 class="text-neutral-500 text-sm uppercase tracking-widest mb-4">Start</h3>
+                        <div class="text-3xl font-bold text-white mb-8">Essencial</div>
+                        <ul class="space-y-4 mb-8 text-sm text-neutral-400">
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Logo Principal
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Paleta de Cores
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Tipografia
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>3 Aplicações
+                            </li>
+                        </ul>
+                        <a href="#contact"
+                            class="block w-full py-3 border border-[#D4AF37]/30 text-[#D4AF37] text-xs uppercase tracking-widest text-center hover:bg-[#D4AF37] hover:text-black transition-all">Solicitar</a>
+                    </div>
+
+                    <!-- Pro (Featured) -->
+                    <div
+                        class="p-10 border border-[#D4AF37] bg-[#D4AF37]/5 relative transform md:scale-105 z-10 shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#D4AF37] text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+                            Recomendado</div>
+                        <h3 class="text-[#D4AF37] text-sm uppercase tracking-widest mb-4">Experience</h3>
+                        <div class="text-4xl font-bold text-white mb-8">Completo</div>
+                        <ul class="space-y-4 mb-8 text-sm text-white">
+                            <li class="flex items-center gap-3"><i data-lucide="check"
+                                    class="w-4 h-4 text-[#D4AF37]"></i>Sistema de Identidade</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check"
+                                    class="w-4 h-4 text-[#D4AF37]"></i>Manual de Marca</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check"
+                                    class="w-4 h-4 text-[#D4AF37]"></i>Social Media Kit</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check"
+                                    class="w-4 h-4 text-[#D4AF37]"></i>Papelaria Completa</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check"
+                                    class="w-4 h-4 text-[#D4AF37]"></i>Design de Site (Landing)</li>
+                        </ul>
+                        <a href="#contact"
+                            class="block w-full py-4 bg-[#D4AF37] text-black font-bold text-xs uppercase tracking-widest text-center hover:bg-white transition-all">Solicitar
+                            Orçamento</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div
+                        class="p-8 border border-[#D4AF37]/20 bg-neutral-900/5 hover:border-[#D4AF37]/50 transition-all duration-300">
+                        <h3 class="text-neutral-500 text-sm uppercase tracking-widest mb-4">Authority</h3>
+                        <div class="text-3xl font-bold text-white mb-8">360º</div>
+                        <ul class="space-y-4 mb-8 text-sm text-neutral-400">
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Tudo do Experience
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Gestão de Tráfego
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Consultoria Mensal
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-1 h-1 bg-[#D4AF37] rounded-full"></div>Prioridade 24/7
+                            </li>
+                        </ul>
+                        <a href="#contact"
+                            class="block w-full py-3 border border-[#D4AF37]/30 text-[#D4AF37] text-xs uppercase tracking-widest text-center hover:bg-[#D4AF37] hover:text-black transition-all">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (Gold Accordion) -->
+        <section id="faq" class="w-full bg-[#050505] py-24 px-6 md:px-12 border-t border-[#D4AF37]/30">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-[#D4AF37] text-xs uppercase tracking-[0.3em] mb-4 block">Dúvidas</span>
+                    <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-tighter text-white">Perguntas <span
+                            class="text-[#D4AF37]">Frequentes</span></h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Q1 -->
+                    <details class="group [&_summary::-webkit-details-marker]:hidden border-b border-[#D4AF37]/20">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between py-6 text-white hover:text-[#D4AF37] transition-colors">
+                            <span class="text-sm uppercase tracking-widest font-bold">Qual o prazo médio de
+                                entrega?</span>
+                            <span class="relative h-5 w-5 shrink-0">
+                                <i data-lucide="plus"
+                                    class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity text-[#D4AF37]"></i>
+                                <i data-lucide="minus"
+                                    class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity text-[#D4AF37]"></i>
+                            </span>
+                        </summary>
+                        <p class="mb-6 text-neutral-400 text-sm leading-relaxed">
+                            Para projetos de Identidade Visual (Plano Experience), o prazo médio é de 3 a 4 semanas.
+                            Isso nos permite mergulhar profundamente na estratégia e nos detalhes. Prazos podem variar
+                            conforme a complexidade e feedback.
+                        </p>
+                    </details>
+
+                    <!-- Q2 -->
+                    <details class="group [&_summary::-webkit-details-marker]:hidden border-b border-[#D4AF37]/20">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between py-6 text-white hover:text-[#D4AF37] transition-colors">
+                            <span class="text-sm uppercase tracking-widest font-bold">Como funciona o pagamento?</span>
+                            <span class="relative h-5 w-5 shrink-0">
+                                <i data-lucide="plus"
+                                    class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity text-[#D4AF37]"></i>
+                                <i data-lucide="minus"
+                                    class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity text-[#D4AF37]"></i>
+                            </span>
+                        </summary>
+                        <p class="mb-6 text-neutral-400 text-sm leading-relaxed">
+                            Trabalhamos com 50% de entrada para reserva de data e início do projeto, e 50% na entrega
+                            final dos arquivos. Aceitamos Pix, Transferência e Cartão de Crédito (via link seguro).
+                        </p>
+                    </details>
+
+                    <!-- Q3 -->
+                    <details class="group [&_summary::-webkit-details-marker]:hidden border-b border-[#D4AF37]/20">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between py-6 text-white hover:text-[#D4AF37] transition-colors">
+                            <span class="text-sm uppercase tracking-widest font-bold">Vocês entregam o arquivo
+                                aberto?</span>
+                            <span class="relative h-5 w-5 shrink-0">
+                                <i data-lucide="plus"
+                                    class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity text-[#D4AF37]"></i>
+                                <i data-lucide="minus"
+                                    class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity text-[#D4AF37]"></i>
+                            </span>
+                        </summary>
+                        <p class="mb-6 text-neutral-400 text-sm leading-relaxed">
+                            Sim! Entregamos todos os arquivos finais em alta resolução (PNG, JPG, PDF) e os arquivos
+                            vetoriais abertos (AI, EPS, SVG) para que você tenha total autonomia sobre sua marca.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact (Gradient Gold CTA) -->
+        <section id="contact"
+            class="w-full bg-gradient-to-b from-[#050505] via-[#0a0800] to-[#1a1500] py-32 px-6 md:px-12 border-t border-[#D4AF37]/30 relative overflow-hidden">
+
+            <!-- Lines Texture -->
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: linear-gradient(0deg, transparent 24%, #D4AF37 25%, #D4AF37 26%, transparent 27%, transparent 74%, #D4AF37 75%, #D4AF37 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, #D4AF37 25%, #D4AF37 26%, transparent 27%, transparent 74%, #D4AF37 75%, #D4AF37 76%, transparent 77%, transparent); background-size: 50px 50px;">
+            </div>
+
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <h2 class="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-8 text-white">
+                    Vamos Criar<br />
+                    <span class="text-[#D4AF37]">O Futuro?</span>
+                </h2>
+                <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Sua marca merece ser lembrada. Agende uma consultoria gratuita e descubra como podemos elevar seu
+                    negócio.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="mailto:hello@universedesign.co"
+                        class="px-12 py-5 bg-[#D4AF37] text-black font-bold uppercase tracking-widest text-sm hover:bg-white hover:scale-105 transition-all duration-300 rounded-none transform shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                        Iniciar Projeto
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full bg-[#050505] py-12 px-6 md:px-12 border-t border-[#D4AF37]/30 text-center md:text-left">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-sm text-neutral-500 uppercase tracking-wider">© 2025 UniverseDesign.Co</div>
+                <div class="flex gap-6">
+                    <a href="#"
+                        class="text-sm text-neutral-500 hover:text-[#D4AF37] uppercase tracking-wider transition-colors">Instagram</a>
+                    <a href="#"
+                        class="text-sm text-neutral-500 hover:text-[#D4AF37] uppercase tracking-wider transition-colors">LinkedIn</a>
+                    <a href="#"
+                        class="text-sm text-neutral-500 hover:text-[#D4AF37] uppercase tracking-wider transition-colors">Twitter</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal Animations Observer
+        const revealElements = document.querySelectorAll('.reveal-up, .fade-left, .fade-right');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    // Optional: Add class if using class-based trigger
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            // Ensure animation is paused initially if defined in CSS, 
+            // but our CSS uses "forwards" keyframes which run immediately.
+            // To properly trigger on scroll, we usually toggle a class.
+            // However, based on current CSS, animations run on load.
+            // For the IMAGE specifically:
+        });
+
+        // About Image Color Reveal
+        const aboutImage = document.getElementById('about-image');
+        if (aboutImage) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutImage.classList.remove('grayscale');
+                        aboutImage.classList.remove('brightness-90');
+                        imageObserver.unobserve(aboutImage);
+                    }
+                });
+            }, { threshold: 0.4 }); // Trigger when 40% visible
+            imageObserver.observe(aboutImage);
+        }
+    </script>
+</body>
+
+</html>
