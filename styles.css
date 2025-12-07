@@ -1,0 +1,9 @@
+/* 
+ * The site largely uses Tailwind CSS utility classes defined in index.html.
+ * This file reserves space for complex custom animations or overrides not easily handled by utility classes.
+ */
+
+body {
+    background-color: #050505;
+    /* Fallback */
+}
